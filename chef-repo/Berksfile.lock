@@ -1,0 +1,60 @@
+DEPENDENCIES
+  centos7
+    path: site-cookbooks/centos7
+  mysql-client
+    path: site-cookbooks/mysql-client
+  mysql-server
+    path: site-cookbooks/mysql-server
+  nginx
+    path: site-cookbooks/nginx
+  php70
+    path: site-cookbooks/php70
+
+GRAPH
+  apt (2.9.2)
+  centos7 (1.0.0)
+    clamav (~> 1.3.0)
+    iptables (>= 0.0.0)
+    ntp (>= 0.0.0)
+    selinux (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  clamav (1.3.0)
+    apt (~> 2.1)
+    cron (~> 1.2)
+    logrotate (~> 1.0)
+    yum (~> 3.0)
+    yum-epel (~> 0.2)
+  compat_resource (12.16.1)
+  cron (1.7.6)
+  iptables (3.0.1)
+    compat_resource (>= 12.14.3)
+  logrotate (1.9.2)
+  mysql (7.2.0)
+    smf (>= 0.0.0)
+    yum-mysql-community (>= 0.0.0)
+  mysql-client (0.1.0)
+    mysql (~> 7.0)
+  mysql-server (0.1.0)
+    mysql (~> 7.0)
+  nginx (0.1.0)
+    yum-epel (>= 0.0.0)
+  ntp (3.2.0)
+  php70 (0.1.0)
+    yum-epel (>= 0.0.0)
+    yum-remi-chef (>= 0.0.0)
+    yum-webtatic (>= 0.0.0)
+  rbac (1.0.3)
+  selinux (0.9.0)
+  smf (2.2.8)
+    rbac (>= 1.0.1)
+  yum (3.13.0)
+  yum-epel (0.7.1)
+    yum (>= 3.6.3)
+  yum-mysql-community (1.0.0)
+    yum (>= 3.2)
+  yum-remi-chef (2.2.0)
+    compat_resource (>= 12.14.6)
+    yum-epel (>= 0.0.0)
+  yum-webtatic (0.6.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)

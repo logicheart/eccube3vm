@@ -1,0 +1,5 @@
+default['bellwedding']['server_name'] = "bellwedding.jp"
+default['bellwedding']['document_root'] = "/var/www/bellwedding/public"
+default['bellwedding']['phpfpm_host'] = "localhost"
+default['bellwedding']['phpfpm_port'] = "9000"
+default['bellwedding']['client_max_body_size'] = "20M"

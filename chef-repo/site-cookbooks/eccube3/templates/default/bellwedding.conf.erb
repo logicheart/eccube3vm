@@ -1,0 +1,23 @@
+#
+# bellwedding server
+#
+server {
+  listen       80;
+
+  include /etc/nginx/default.d/*.conf;
+  server_name  <%= node['bellwedding']['server_name'] %> *.<%= node['bellwedding']['server_name'] %>;
+  root   <%= node['bellwedding']['document_root'] %>;
+  index  index.php index.html index.htm;
+  client_max_body_size <%= node['bellwedding']['client_max_body_size'] %>;
+
+  location / {
+    try_files $uri $uri/ /index.php?$uri&$args;
+  }
+
+  location ~ \.php$ {
+    fastcgi_pass   <%= node['bellwedding']['phpfpm_host'] %>:<%= node['bellwedding']['phpfpm_port'] %>;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+  }
+}

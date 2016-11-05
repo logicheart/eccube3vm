@@ -1,0 +1,9 @@
+source "https://supermarket.getchef.com"
+
+cookbook "centos7", path: "./site-cookbooks/centos7"
+cookbook "nginx", path: "./site-cookbooks/nginx"
+cookbook "mysql-client", path: "./site-cookbooks/mysql-client"
+cookbook "mysql-server", path: "./site-cookbooks/mysql-server"
+cookbook "php70", path: "./site-cookbooks/php70"
+#cookbook "database", path: "./site-cookbooks/database"
+#cookbook "eccube3", path: "./site-cookbooks/bellwedding"

@@ -1,0 +1,10 @@
+name             'php70'
+maintainer       'LogicHeart'
+maintainer_email 'hiroyasu.yamada@logicheart.biz'
+license          'All rights reserved'
+description      'Installs/Configures Ruby on Rails server'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          '0.1.0'
+depends          'yum-epel'
+depends          'yum-remi-chef'
+depends          'yum-webtatic'

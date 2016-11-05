@@ -1,0 +1,48 @@
+{
+  "name": "development",
+  "description": "Development server role defined as JSON",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "nginx": {
+      "sendfile": "off"
+    },
+    "mysql-server": {
+      "version": "5.7",
+      "root_password": "password"
+    },
+    "database": {
+      "root_password": "password",
+      "host": "127.0.0.1",
+      "databases": [
+        "bellwedding", "bellwedding-test"
+      ],
+      "bellwedding": {
+        "user": "bellwedding",
+        "password": "bellwedding"
+      },
+      "bellwedding-test": {
+        "user": "bellwedding",
+        "password": "bellwedding"
+      }
+    },
+    "bellwedding": {
+      "server_name": "bellwedding.local",
+      "document_root": "/var/www/bellwedding/public",
+      "phpfpm_host": "localhost",
+      "client_max_body_size": "20M"
+    }
+  },
+  "override_attributes": {
+  },
+  "_run_list": [
+  ],
+  "run_list": [
+    "recipe[centos7]",
+    "recipe[nginx]",
+    "recipe[mysql-server]",
+    "recipe[php70::default]",
+    "recipe[database]",
+    "recipe[bellwedding]"
+  ]
+}
